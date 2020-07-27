@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewEventWindowController">
+    <children>
+        <VBox layoutX="9.0" layoutY="9.0" prefHeight="326.0" prefWidth="584.0">
+            <children>
+                <Label alignment="TOP_LEFT" text="Create New User" />
+                <HBox prefHeight="288.0" prefWidth="413.0" spacing="20.0">
+                    <children>
+                        <GridPane prefHeight="302.0" prefWidth="225.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                     <children>
+                        <Label text="Event ID" />
+                        <Label text="Name" GridPane.rowIndex="1" />
+                        <Label text="Description" GridPane.rowIndex="2" />
+                        <Label text="Owner" GridPane.rowIndex="3" />
+                        <Label text="Status" GridPane.rowIndex="4" />
+                        <Label text="Venue" GridPane.rowIndex="5" />
+                        <Label text="Date" GridPane.rowIndex="6" />
+                        <TextField fx:id="idTextField" GridPane.columnIndex="1" />
+                        <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="descriptionTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="ownerTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="statusTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="venueTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="dateTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="capacityTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="attendeeCountTextField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label text="Capacity" GridPane.rowIndex="7" />
+                        <Label text="AttendeeCount" GridPane.rowIndex="8" />
+                     </children>
+                        </GridPane>
+                  <ImageView fx:id="photoImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+      <Button fx:id="saveButton" alignment="CENTER" layoutX="553.0" layoutY="368.0" mnemonicParsing="false" onAction="#saveEventButtonPushed" text="Save" />
+      <Label fx:id="errorLabel" layoutX="62.0" layoutY="335.0" />
+      <Button fx:id="chooseImageButton" layoutX="375.0" layoutY="368.0" mnemonicParsing="false" onAction="#chooseImageButtonPushed" text="Chose Image" />
+      <Button fx:id="backButton" layoutX="29.0" layoutY="368.0" mnemonicParsing="false" onAction="#backButtonPushed" text="back" />
+    </children>
+</AnchorPane>

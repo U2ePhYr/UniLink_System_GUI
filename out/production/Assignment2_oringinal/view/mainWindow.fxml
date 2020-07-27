@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <children>
+      <HBox layoutY="36.0" prefHeight="100.0" prefWidth="800.0" spacing="50.0">
+         <children>
+            <ToolBar prefHeight="49.0" prefWidth="800.0">
+              <items>
+                  <Button fx:id="newEventButton" mnemonicParsing="false" onAction="#pushNewEventButton" prefHeight="39.0" prefWidth="104.0" text="New Event Post" />
+                <Button fx:id="newSaleButton" mnemonicParsing="false" onAction="#pushNewSaleButton" prefHeight="39.0" prefWidth="104.0" text="New Sale Post" />
+                  <Button fx:id="newJobButton" mnemonicParsing="false" onAction="#pushNewJobButton" prefHeight="39.0" prefWidth="104.0" text="New Job Post" />
+                  <Label text="Status:" />
+                  <ComboBox prefHeight="17.0" prefWidth="82.0" />
+                  <Label text="Creator:" />
+                  <ComboBox prefHeight="17.0" prefWidth="82.0" />
+              </items>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </ToolBar>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox layoutY="7.0" prefHeight="29.0" prefWidth="800.0" spacing="20.0">
+         <children>
+            <ComboBox fx:id="uniLinkComboBox" onAction="#comboBoxWasUpdated" prefWidth="150.0" promptText="UniLink" />
+            <ComboBox fx:id="dataComboBox" onAction="#comboBoxIsUpdated" prefWidth="150.0" promptText="Data" />
+         </children>
+      </HBox>
+      <VBox layoutY="123.0" prefHeight="676.0" prefWidth="800.0" spacing="5.0">
+         <children>
+            <AnchorPane prefHeight="669.0" prefWidth="790.0">
+               <children>
+                  <TableView fx:id="eventTable" layoutY="31.0" onMouseClicked="#selectTables" prefHeight="124.0" prefWidth="790.0">
+                    <columns>
+                      <TableColumn fx:id="eventIdColumn" prefWidth="54.0" text="Evevt ID" />
+                      <TableColumn fx:id="titleColumn" prefWidth="78.0" text="Title" />
+                        <TableColumn fx:id="descriptionColumn" prefWidth="133.0" text="Description" />
+                        <TableColumn fx:id="creatorIdColumn" prefWidth="63.0" text="Creator ID" />
+                        <TableColumn fx:id="statusColumn" prefWidth="54.0" text="Status" />
+                        <TableColumn fx:id="imageFileColumn" prefWidth="116.0" text="ImageFile" />
+                        <TableColumn fx:id="venueColumn" prefWidth="52.0" text="Venue" />
+                        <TableColumn fx:id="dateColumn" prefWidth="84.0" text="Date" />
+                        <TableColumn fx:id="capacityColumn" prefWidth="56.0" text="Capacity" />
+                        <TableColumn fx:id="attendeeCountColumn" prefWidth="91.0" text="AttendeeCount" />
+                    </columns>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TableView>
+                  <TableView fx:id="saleTable" layoutY="208.0" onMouseClicked="#selectTables" prefHeight="124.0" prefWidth="790.0">
+                     <columns>
+                        <TableColumn fx:id="saleIdColumn" prefWidth="54.0" text="Sale ID" />
+                        <TableColumn fx:id="title1Column" prefWidth="78.0" text="Title" />
+                        <TableColumn fx:id="description1Column" prefWidth="236.0" text="Description" />
+                        <TableColumn fx:id="creatorId1Column" minWidth="0.0" prefWidth="65.0" text="Creator ID" />
+                        <TableColumn fx:id="status1Column" prefWidth="43.0" text="Status" />
+                        <TableColumn fx:id="imageFile1Column" prefWidth="121.0" text="ImageFile" />
+                        <TableColumn fx:id="askingPriceColumn" prefWidth="78.0" text="Asking Price" />
+                        <TableColumn fx:id="minimumRaiseColumn" prefWidth="110.0" text="Minimum Raise" />
+                     </columns>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TableView>
+                  <TableView fx:id="jobTable" layoutY="399.0" onMouseClicked="#selectTables" prefHeight="124.0" prefWidth="790.0">
+                     <columns>
+                        <TableColumn fx:id="jobIdColumn" prefWidth="54.0" text="Job ID" />
+                        <TableColumn fx:id="title2Column" prefWidth="102.0" text="Title" />
+                        <TableColumn fx:id="description2Column" prefWidth="265.0" text="Description" />
+                        <TableColumn fx:id="creatorId2Column" prefWidth="71.0" text="Creator ID" />
+                        <TableColumn fx:id="status2Column" prefWidth="62.0" text="Status" />
+                        <TableColumn fx:id="imageFile2Column" prefWidth="139.0" text="ImageFile" />
+                        <TableColumn fx:id="proposedPriceColumn" prefWidth="88.0" text="ProposedPrice" />
+                     </columns>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </TableView>
+                  <Label layoutX="11.0" layoutY="191.0" text="Sale List" />
+                  <Label layoutX="14.0" layoutY="14.0" text="Event List" />
+                  <Label layoutX="7.0" layoutY="382.0" text="Job List" />
+                  <Button fx:id="editJobButton" layoutX="395.0" layoutY="523.0" mnemonicParsing="false" onAction="#jobEditButtonPushed" text="Edit Job" />
+                  <Button fx:id="editSaleButton" layoutX="395.0" layoutY="332.0" mnemonicParsing="false" onAction="#saleEditButtonPushed" text="Edit Sale" />
+                  <Button fx:id="editEventButton" layoutX="390.0" layoutY="155.0" mnemonicParsing="false" onAction="#eventEditButtonPushed" text="Edit  Event" />
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
